@@ -7,6 +7,7 @@ namespace JazzAlbumMVC.Models
         public string Title { get; set; }
         public int Year { get; set; }
         public List<string> Tracks { get; set; }
+        public List<string> BandMembers { get; set; }
 
         public int AlbumId { get; set; }
         private static int nextId = 1;

@@ -25,16 +25,14 @@
     <div class="form-group">
         <label asp-for="Tracks"></label>
         <input asp-for="Tracks" class="form-control" />
-        <input asp-for="Tracks" class="form-control" />
-        <input asp-for="Tracks" class="form-control" />
-        <input asp-for="Tracks" class="form-control" />
-        <input asp-for="Tracks" class="form-control" />
-        <input asp-for="Tracks" class="form-control" />
-        <input asp-for="Tracks" class="form-control" />
-        <input asp-for="Tracks" class="form-control" />
-        <input asp-for="Tracks" class="form-control" />
-        <input asp-for="Tracks" class="form-control" />
+        <input type="button" value="Add Track" asp-for="Tracks"/>
         <span asp-validation-for="Tracks"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="BandMembers"></label>
+        <input asp-for="BandMembers" class="form-control" />
+        <input type="button" value="Add Band Member" asp-for="BandMembers" />
+        <span asp-validation-for="BandMembers"></span>
     </div>
     <input type="submit" value="Add Album" />
 

@@ -65,7 +65,7 @@ namespace JazzAlbumMVC
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=JazzAlbum}/{action=Index}/{id?}");
             });
         }
     }

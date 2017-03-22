@@ -33,7 +33,8 @@ namespace JazzAlbumMVC.Controllers
                     Artist = addJazzAlbumViewModel.Artist,
                     Title = addJazzAlbumViewModel.Title,
                     Year = addJazzAlbumViewModel.Year,
-                    Tracks = addJazzAlbumViewModel.Tracks
+                    Tracks = addJazzAlbumViewModel.Tracks,
+                    BandMembers = addJazzAlbumViewModel.BandMembers
                 };
 
                 JazzAlbumData.Add(newJazzAlbum);

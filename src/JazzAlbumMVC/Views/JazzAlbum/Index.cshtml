@@ -17,6 +17,7 @@
         <th>Title</th>
         <th>Year</th>
         <th>Tracks</th>
+        <th>Band Members</th>
     </tr>
 
     @foreach (var album in Model.JazzAlbums)
@@ -26,6 +27,7 @@
             <td>@album.Title</td>
             <td>@album.Year</td>
             <td>@album.Tracks.Count</td>
+            <td>@album.BandMembers.Count</td>
             @*@foreach (var track in @album.Tracks)
             {
                 <td>@track</td>
