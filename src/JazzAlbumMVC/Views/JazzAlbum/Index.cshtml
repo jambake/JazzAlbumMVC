@@ -1,0 +1,37 @@
+﻿@model JazzAlbumMVC.ViewModels.AllJazzAlbumsViewModel
+
+<h1>My Albums</h1>
+
+<p><a asp-controller="JazzAlbum" asp-action="Add">Add Album</a></p>
+
+@if (Model.JazzAlbums.Count == 0)
+{
+    <p>No albums yet!</p>
+
+}
+
+<table class="table">
+
+    <tr>
+        <th>Artist</th>
+        <th>Title</th>
+        <th>Year</th>
+        <th>Tracks</th>
+    </tr>
+
+    @foreach (var album in Model.JazzAlbums)
+    {
+        <tr>
+            <td><a asp-controller="JazzAlbum" asp-action="Detail" asp-route-id="@album.AlbumId">@album.Artist</a></td>
+            <td>@album.Title</td>
+            <td>@album.Year</td>
+            <td>@album.Tracks.Count</td>
+            @*@foreach (var track in @album.Tracks)
+            {
+                <td>@track</td>
+            }*@
+        </tr>
+
+    }
+
+</table>
