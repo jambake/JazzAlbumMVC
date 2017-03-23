@@ -1,0 +1,20 @@
+﻿@model JazzAlbumMVC.Models.JazzAlbum
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <td>@Model.Artist</td>
+    </tr>
+    <tr>
+        <th>Description</th>
+        <td>@Model.Title</td>
+    </tr>
+    <tr>
+        <th>Tracks</th>
+        @foreach (var track in @Model.Tracks)
+        {
+            <td>@track</td>
+        }
+        
+    </tr>
+</table>

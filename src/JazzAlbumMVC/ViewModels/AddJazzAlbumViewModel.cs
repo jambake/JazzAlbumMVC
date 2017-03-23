@@ -13,15 +13,15 @@ namespace JazzAlbumMVC.ViewModels
         public string Artist { get; set; }
         [Required]
         public int Year { get; set; }
-        [Required]
+        
         public List<string> Tracks { get; set; }
-        [Required]
+        
         public List<string> BandMembers { get; set; }
 
         public AddJazzAlbumViewModel()
         {
-            Tracks = new List<string>();
-            BandMembers = new List<string>();
+            //Tracks = new List<string>();
+            //BandMembers = new List<string>();
         }
     }
 }

@@ -1,0 +1,16 @@
+﻿
+<h1>Remove Album</h1>
+
+<p><a asp-controller="JazzAlbum" asp-action="">Album List</a></p>
+
+<form asp-controller="JazzAlbum" asp-action="Remove" method="post">
+    @foreach (var album in ViewBag.JazzAlbums)
+    {
+        <input type="checkbox" value="@album.AlbumId" id="@album.AlbumId" name="albumIds" />
+        <label for="@album.AlbumId">@album.Title (by @album.Artist)</label>
+        <br />
+    }
+    <input type="submit" value="Remove Album" />
+</form>
+
+

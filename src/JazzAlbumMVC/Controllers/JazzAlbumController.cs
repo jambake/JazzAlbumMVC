@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using JazzAlbumMVC.ViewModels;
 using JazzAlbumMVC.Models;
+using System.Collections.Generic;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -26,6 +27,26 @@ namespace JazzAlbumMVC.Controllers
         [HttpPost]
         public IActionResult Add(AddJazzAlbumViewModel addJazzAlbumViewModel)
         {
+            List<string> realTracks = new List<string>();
+
+            foreach (string track in addJazzAlbumViewModel.Tracks)
+            {
+                if (!string.IsNullOrEmpty(track))
+                {
+                    realTracks.Add(track);
+                }
+            }
+
+            List<string> realBandMembers = new List<string>();
+
+            foreach (string bandMember in addJazzAlbumViewModel.BandMembers)
+            {
+                if (!string.IsNullOrEmpty(bandMember))
+                {
+                    realBandMembers.Add(bandMember);
+                }
+            }
+
             if (ModelState.IsValid)
             {
                 JazzAlbum newJazzAlbum = new Models.JazzAlbum
@@ -33,10 +54,10 @@ namespace JazzAlbumMVC.Controllers
                     Artist = addJazzAlbumViewModel.Artist,
                     Title = addJazzAlbumViewModel.Title,
                     Year = addJazzAlbumViewModel.Year,
-                    Tracks = addJazzAlbumViewModel.Tracks,
-                    BandMembers = addJazzAlbumViewModel.BandMembers
+                    Tracks = realTracks,
+                    BandMembers = realBandMembers
                 };
-
+                
                 JazzAlbumData.Add(newJazzAlbum);
 
                 return Redirect("/");
@@ -54,7 +75,7 @@ namespace JazzAlbumMVC.Controllers
         }
         [HttpPost]
         [Route("/JazzAlbum/Remove")]
-        public IActionResult RemoveAlbum(int[] albumIds)
+        public IActionResult Remove(int[] albumIds)
         {
             foreach (int id in albumIds)
             {
