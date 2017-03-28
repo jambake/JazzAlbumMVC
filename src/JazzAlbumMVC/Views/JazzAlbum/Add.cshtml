@@ -1,28 +1,33 @@
 ﻿@model JazzAlbumMVC.ViewModels.AddJazzAlbumViewModel
+
+@*<script type="text/javascript">
+    document.getElementById("add-track-input").addEventListener("click", function () {
+        var element = document.createElement("input");
+        element.setAttribute("asp-for", "Tracks");
+        element.setAttribute("class", "form-control");
+        document.getElementById("track-list").appendChild(element);
+    });
+</script>*@
+
 <h1>Add Album</h1>
 
 <p><a asp-controller="JazzAlbum" asp-action="">Album List</a></p>
 
 <form asp-controller="JazzAlbum" asp-action="Add" method="post">
 
-    @*<div asp-validation-summary="All"></div>*@
-
-    <div class="form-group">
+    <div class="form-group" id="artist-input">
         <label asp-for="Artist"></label>
         <input asp-for="Artist" class="form-control" />
-        <span asp-validation-for="Artist"></span>
     </div>
-    <div class="form-group">
+    <div class="form-group" id="album-title">
         <label asp-for="Title"></label>
         <input asp-for="Title" class="form-control" />
-        <span asp-validation-for="Title"></span>
     </div>
-    <div class="form-group">
+    <div class="form-group" id="year-input">
         <label asp-for="Year"></label>
         <input asp-for="Year" class="form-control" />
-        <span asp-validation-for="Year"></span>
     </div>
-    <div class="form-group">
+    <div class="form-group" id="track-list">
         <label asp-for="Tracks"></label>
         <input asp-for="Tracks" class="form-control" />
         <input asp-for="Tracks" class="form-control" />
@@ -32,10 +37,10 @@
         <input asp-for="Tracks" class="form-control" />
         <input asp-for="Tracks" class="form-control" />
         <input asp-for="Tracks" class="form-control" />
-        <input asp-for="Tracks" class="form-control" />
-        <input asp-for="Tracks" class="form-control" />
+
+        @*<input id="add-track-input" type="submit" value="add more..." />*@
     </div>
-    <div class="form-group">
+    <div class="form-group" id="band-members">
         <label asp-for="BandMembers"></label>
         <input asp-for="BandMembers" class="form-control" />
         <input asp-for="BandMembers" class="form-control" />
@@ -43,8 +48,11 @@
         <input asp-for="BandMembers" class="form-control" />
         <input asp-for="BandMembers" class="form-control" />
         <input asp-for="BandMembers" class="form-control" />
-        <span asp-validation-for="BandMembers"></span>
+        <input asp-for="BandMembers" class="form-control" />
+        <input asp-for="BandMembers" class="form-control" />
+
+        @*<input id="add-member-input" type="submit" value="add more..." />*@
     </div>
-    <input type="submit" value="Add Album" />
+    <input id="add-album-btn" type="submit" value="Add Album" />
 
 </form>
