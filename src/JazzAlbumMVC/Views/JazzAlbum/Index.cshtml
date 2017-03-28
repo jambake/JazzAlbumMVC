@@ -21,8 +21,8 @@
     @foreach (var album in Model.JazzAlbums)
     {
         <tr>
-            <td><a asp-controller="JazzAlbum" asp-action="Detail" asp-route-id="@album.AlbumId">@album.Artist</a></td>
-            <td>@album.Title</td>
+            <td>@album.Artist</td>
+            <td><a asp-controller="JazzAlbum" asp-action="Detail" asp-route-id="@album.AlbumId">@album.Title</a></td>
             <td>@album.Year</td>
             <td>@album.Tracks.Count</td>
             <td>@album.BandMembers.Count</td>
